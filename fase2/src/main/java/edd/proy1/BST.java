@@ -45,4 +45,36 @@ public class BST<T> {
         /* return the (unchanged) node pointer */
         return root;
     }
+
+    // This method mainly calls InorderRec()
+    void inorder() { inorderRec(root); }
+
+    // A utility function to
+    // do inorder traversal of BST
+    void inorderRec(Node<T> root)
+    {
+        if (root != null) {
+        inorderRec(root.left);
+        System.out.println(root.key);
+        inorderRec(root.right);
+        }
+    }
+
+    void preorderRec(Node<T> root)
+    {
+        if (root != null) {
+        System.out.println(root.key);
+        preorderRec(root.left);
+        preorderRec(root.right);
+        }
+    }
+
+    void posorderRec(Node<T> root)
+    {
+        if (root != null) {
+        posorderRec(root.left);
+        posorderRec(root.right);
+        System.out.println(root.key);
+        }
+    }
 }
