@@ -2,11 +2,11 @@ package edd.proy1;
 
 public class BST<T> {
 
-    class Node<T>{
-        T key;
-        Node<T> left, right;
+    class Node{
+        int key;
+        Node left, right;
  
-        public Node(T item)
+        public Node(int item)
         {
             key = item;
             left = right = null;
@@ -14,25 +14,25 @@ public class BST<T> {
     }
  
     // Root of BST
-    Node<T> root;
+    Node root;
  
     // Constructor
     BST() { root = null; }
  
-    BST(T value) { root = new Node<T>(value); }
+    BST(int value) { root = new Node(value); }
  
     // This method mainly calls insertRec()
-    void insert(T key) { root = insertRec(root, key); }
+    void insert(int key) { root = insertRec(root, key); }
  
     /* A recursive function to
        insert a new key in BST */
-    Node<T> insertRec(Node<T> root, T key)
+    Node insertRec(Node root, int key)
     {
  
         /* If the tree is empty,
            return a new node */
         if (root == null) {
-            root = new Node<T>(key);
+            root = new Node(key);
             return root;
         }
  
@@ -51,7 +51,7 @@ public class BST<T> {
 
     // A utility function to
     // do inorder traversal of BST
-    void inorderRec(Node<T> root)
+    void inorderRec(Node root)
     {
         if (root != null) {
         inorderRec(root.left);
@@ -60,7 +60,7 @@ public class BST<T> {
         }
     }
 
-    void preorderRec(Node<T> root)
+    void preorderRec(Node root)
     {
         if (root != null) {
         System.out.println(root.key);
@@ -69,7 +69,7 @@ public class BST<T> {
         }
     }
 
-    void posorderRec(Node<T> root)
+    void posorderRec(Node root)
     {
         if (root != null) {
         posorderRec(root.left);
